@@ -24,12 +24,81 @@
       }
     </style>
     <style>
-      marquee{
-      font-size: 30px;
-      font-weight: 800;
-      color: Black;
-      font-family: serif;
-      }
+     body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 95%; /* Increased width */
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .box-main {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+      transition: background-color 0.3s ease;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 20px;
+      font-size: 18px;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    button {
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #28a745; /* Green color */
+      color: #fff;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background-color: #218838; /* Darker green on hover */
+    }
+
+    footer {
+ 
+      padding: 20px 0;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
  
     </style>
 </head>
@@ -37,12 +106,7 @@
 <body>
 
     <header>
-        <marquee bgcolor="#808080"
-<div class="toogle"></div>
-        <div id="file-name">
-            %s
-        </div>
-</marquee>
+  
     </header>
 
     <div class="container">
@@ -50,7 +114,7 @@
     </div>
 
     <footer>
-	   <p> <center><h4>Video not playing? Possibly because your browser or the player doesn't support codec. Please download and watch :D</h4></center>
+	   <p> <center><h4> If Video is not playing: Possibly because your browser or the player doesn't support codec. Please download and watch</h4></center>
     </p>	     
     </footer>
     <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
