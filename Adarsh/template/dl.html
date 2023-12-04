@@ -108,22 +108,6 @@
         </div>
       </div>
 
-      <script>
-        var url = "%s";
-        url = url.toLowerCase();
-        if ((url.indexOf(".mp4") == -1) &&
-            (url.indexOf(".avi") == -1) &&
-            (url.indexOf(".mkv") == -1) &&
-            (url.indexOf(".mov") == -1) &&
-            (url.indexOf(".m3u8") == -1) &&
-            (url.indexOf(".webm") == -1))
-        {
-            var btns = document.getElementsByClassName("playerbtns");
-            for (x=0;x<btns.length;x++) {
-                btns[x].style.display = "none";
-            }
-        }
-      </script>
 
     
 
