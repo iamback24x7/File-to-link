@@ -32,28 +32,7 @@
         </div>
       </div>
 
-      <script>
-        var url = "%s";
-        url = url.toLowerCase();
-        if ((url.indexOf(".mp4") == -1) &&
-            (url.indexOf(".avi") == -1) &&
-            (url.indexOf(".mkv") == -1) &&
-            (url.indexOf(".mov") == -1) &&
-            (url.indexOf(".m3u8") == -1) &&
-            (url.indexOf(".webm") == -1))
-        {
-            var btns = document.getElementsByClassName("playerbtns");
-            for (x=0;x<btns.length;x++) {
-                btns[x].style.display = "none";
-            }
-        }
-      </script>
-
-      <center>
-        <button onclick="window.location.href='vlc://%s'">👀 VLC Player</button>
-        <button onclick="window.location.href='playit://playerv2/video?url=%s&amp;title=<TMPL_VAR file_name>'">👀 Playit app</button>
-        <button onclick="window.location.href='intent:%s#Intent;package=com.mxtech.videoplayer.ad;S.title=<TMPL_VAR file_name>;end'">👀 MX Player</button><br>
-      </center>
+  
 
       <br>
 
