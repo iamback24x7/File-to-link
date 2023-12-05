@@ -35,7 +35,7 @@ async def render_page(id, secure_hash):
                     file_size = humanbytes(int(u.headers.get('Content-Length')))
                     html = (await r.read()) % (heading, file_data.file_name, src, file_size)
     current_url = f'{Var.URL}/{str(id)}/{file_data.file_name}?hash={secure_hash}'
-    html_code = f'''
+html_code = f'''
    <p>
      
           <center><b>This link expires after 24 hours.</b></center>
@@ -48,8 +48,6 @@ async def render_page(id, secure_hash):
       
     <center><h5>Click on 👇 button to watch/download in your favorite player</h5></center>
 
-
-
       <center>
        <a href="vlc://{current_url}"  ><button>👀 VLC Player</button></a>
        <a href="playit://playerv2/video?url={current_url}&amp;title={file_data.file_name}" class="playit" > <button onclick="window.location.href=''">👀 Playit app</button></a>
@@ -57,9 +55,7 @@ async def render_page(id, secure_hash):
       </center>
 </p>
 </p>
-
-
 '''
 
-    html += html_code    
+html += html_code
     return html
