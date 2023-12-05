@@ -34,7 +34,7 @@ async def render_page(id, secure_hash):
                     heading = 'Download {}'.format(file_data.file_name)
                     file_size = humanbytes(int(u.headers.get('Content-Length')))
                     html = (await r.read()) % (heading, file_data.file_name, src, file_size)
-    current_url = f'{Var.URL}/{str(id)}/{file_data.file_name}?hash={secure_hash}'
+current_url = urllib.parse.urljoin(Var.URL, f'{str(id)}/{file_data.file_name}?hash={secure_hash}')
     html_code = f'''
    <div>
      
