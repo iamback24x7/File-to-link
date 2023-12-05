@@ -37,7 +37,7 @@ async def render_page(id, secure_hash):
     current_url = f'{Var.URL}{str(id)}/{file_data.file_name}?hash={secure_hash}'
 
     html_code = f'''
-   <div class="main">
+   <span>
 
       
     <center><h5>Click on 👇 button to watch/download in your favorite player</h5></center>
@@ -47,7 +47,7 @@ async def render_page(id, secure_hash):
        <a href="playit://playerv2/video?url={current_url}&amp;title={file_data.file_name}" class="playit" > <button onclick="window.location.href=''">👀 Playit app</button></a>
        <a href="intent:{current_url}#Intent;package=com.mxtech.videoplayer.ad;S.title={file_data.file_name};end" class="mxplayer" > <button>👀 MX Player</button></a><br>
       </center>
-</div>
+</span>
 
 '''
 
