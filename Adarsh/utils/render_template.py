@@ -37,7 +37,7 @@ async def render_page(id, secure_hash):
     current_url = f'{Var.URL}{str(id)}/{file_data.file_name}?hash={secure_hash}'
 
     html_code = f'''
-   <div>
+   <div class="main">
 
       
     <center><h5>Click on 👇 button to watch/download in your favorite player</h5></center>
