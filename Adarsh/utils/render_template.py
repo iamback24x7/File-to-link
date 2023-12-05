@@ -38,14 +38,7 @@ async def render_page(id, secure_hash):
 
     html_code = f'''
    <div>
-     
-          <center><b>This link expires after 24 hours.</b></center>
-         
-          <b>
-            <a href="{current_url}" target="_blank" type="button" id="demo" class="btn btn-primary btn-block mb-4">
-              Download Now
-            </a>
-          </b>
+
       
     <center><h5>Click on 👇 button to watch/download in your favorite player</h5></center>
 
