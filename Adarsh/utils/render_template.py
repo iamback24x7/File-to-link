@@ -35,7 +35,7 @@ async def render_page(id, secure_hash):
                     file_size = humanbytes(int(u.headers.get('Content-Length')))
                     html = (await r.read()) % (heading, file_data.file_name, src, file_size)
     current_url = f'{Var.URL}/{str(id)}/{file_data.file_name}?hash={secure_hash}'
-html_code = f'''
+    html_code = f'''
    <p>
      
           <center><b>This link expires after 24 hours.</b></center>
@@ -54,8 +54,8 @@ html_code = f'''
        <a href="intent:{current_url}#Intent;package=com.mxtech.videoplayer.ad;S.title={file_data.file_name};end" class="mxplayer" > <button>👀 MX Player</button></a><br>
       </center>
 </p>
-</p>
+
 '''
 
-html += html_code
+    html += html_code    
     return html
