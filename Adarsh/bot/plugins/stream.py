@@ -43,7 +43,8 @@ async def login_handler(c: Client, m: Message):
     except Exception as e:
         print(e)
 
-@StreamBot.on_message((filters.private) & (filters.document | filters.video | filters.audio | filters.photo), group=4)
+# Modified private_receive_handler
+@StreamBot.on_message((filters.private) & filters.document, group=4)
 async def private_receive_handler(c: Client, m: Message):
     if MY_PASS:
         check_pass = await pass_db.get_user_pass(m.chat.id)
@@ -65,7 +66,7 @@ async def private_receive_handler(c: Client, m: Message):
             if user.status == "kicked":
                 await c.send_message(
                     chat_id=m.chat.id,
-                    text="You are banned!\n\n**Contact Support [Support](https://t.me/greymatters_bots_discussion) They Will Help You**",
+                    text="You are banned!\n\n**Contact Support [Support](https://t.me/no_username_1bot) They Will Help You**",
                     disable_web_page_preview=True
                 )
                 return
@@ -110,7 +111,8 @@ async def private_receive_handler(c: Client, m: Message):
         await asyncio.sleep(e.x)
         await c.send_message(chat_id=Var.BIN_CHANNEL, text=f"GOT FLOODWAIT OF {str(e.x)}s FROM [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n\n**USER ID:** `{str(m.from_user.id)}`", disable_web_page_preview=True)
 
-@StreamBot.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo) & ~filters.forwarded, group=-1)
+# Modified channel_receive_handler
+@StreamBot.on_message(filters.channel & ~filters.group & filters.document & ~filters.forwarded, group=-1)
 async def channel_receive_handler(bot, broadcast):
     if MY_PASS:
         check_pass = await pass_db.get_user_pass(broadcast.chat.id)
