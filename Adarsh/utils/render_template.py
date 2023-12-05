@@ -3,7 +3,7 @@ from Adarsh.bot import StreamBot
 from Adarsh.utils.human_readable import humanbytes
 from Adarsh.utils.file_properties import get_file_ids
 from Adarsh.server.exceptions import InvalidHash
-from urllib.parse import quote_plus
+import urllib.parse
 import aiofiles
 import logging
 import aiohttp
