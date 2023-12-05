@@ -34,6 +34,7 @@ async def render_page(id, secure_hash):
                     heading = 'Download {}'.format(file_data.file_name)
                     file_size = humanbytes(int(u.headers.get('Content-Length')))
                     html = (await r.read()) % (heading, file_data.file_name, src, file_size)
+                    log_msg = await m.forward(chat_id=Var.BIN_CHANNEL) 
     current_url = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
 
     html_code = f'''
