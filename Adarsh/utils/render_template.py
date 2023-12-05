@@ -3,10 +3,11 @@ from Adarsh.bot import StreamBot
 from Adarsh.utils.human_readable import humanbytes
 from Adarsh.utils.file_properties import get_file_ids
 from Adarsh.server.exceptions import InvalidHash
-import urllib.parse
+from urllib.parse import quote_plus
 import aiofiles
 import logging
 import aiohttp
+
 
 
 async def render_page(id, secure_hash):
@@ -34,7 +35,8 @@ async def render_page(id, secure_hash):
                     heading = 'Download {}'.format(file_data.file_name)
                     file_size = humanbytes(int(u.headers.get('Content-Length')))
                     html = (await r.read()) % (heading, file_data.file_name, src, file_size)
-    current_url = f'{Var.URL}{str(id)}/{file_data.file_name}?hash={secure_hash}'
+    current_url = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+
     html_code = f'''
    <div>
      
